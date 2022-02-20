@@ -34,13 +34,13 @@ int main () {
 
 // callbacks overwriting
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
-	if(htim->Instance == htim1.Instance) {
+	if(htim->Instance == ws2812.ws2812b_obj.tim->Instance) {
 		ws2812b_dma_handler(&ws2812.ws2812b_obj, 0);
 	}
 }
 
 void HAL_TIM_PWM_PulseFinishedHalfCpltCallback(TIM_HandleTypeDef *htim) {
-	if(htim->Instance == htim1.Instance) {
+	if(htim->Instance == ws2812.ws2812b_obj.tim->Instance) {
 		ws2812b_dma_handler(&ws2812.ws2812b_obj, 1);
 	}
 }
