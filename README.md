@@ -6,7 +6,7 @@
 #define NUMBER_OF_LEDS 24
 
 typedef struct {
-	RGB_t colors [NUMBER_OF_LEDS];
+	RGB_t colors [NUMBER_OF_LEDS]; // or HSV_t
 	ws2812b_t ws2812b_obj;
 } WS2812_Handle;
 
